@@ -18,7 +18,11 @@ public class OrderBookDaoImpl implements OrderBookDao {
 	public void addOrderToOrderBook(Integer instrumentId, Order order) {
 		if(InstrumentCache.INSTRUMENT_CACHE_MAP.containsKey(instrumentId)) {
 			Instrument instrument = InstrumentCache.INSTRUMENT_CACHE_MAP.get(instrumentId);
-			instrument.getOrdreBook().add(order);
+			if(instrument.getOrdreBook().add(order)) {
+				logger.info("Order: {} added successfully to order book", order.getOrderId());
+			}else {
+				logger.info("Not able to add order to book, please check orderbook status : {} ",instrument.getOrdreBook().getOrderBookStatusType());
+			}
 		}else {
 			logger.info("Instrument does not exits in cache");
 		}
