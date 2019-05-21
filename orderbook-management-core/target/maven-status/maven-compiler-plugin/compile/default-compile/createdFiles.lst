@@ -8,6 +8,7 @@ com\cs\orderbook\dao\OrderBookDao.class
 com\cs\orderbook\OrderBookRunner.class
 com\cs\orderbook\stats\OrderBookValidityStats.class
 com\cs\orderbook\rules\ExecutionQuantityLinearDistributionRule.class
+com\cs\orderbook\constants\ExecutionConstants.class
 com\cs\orderbook\stats\OrderBookSummaryStats.class
 com\cs\orderbook\rules\ValidBookDemandRule.class
 com\cs\orderbook\service\OrderBookService.class
